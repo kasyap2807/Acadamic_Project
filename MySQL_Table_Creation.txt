@@ -1,0 +1,22 @@
+use kittu;
+create table login (user int auto_increment primary Key,name varchar(20),pass int,type bool);
+insert into login values(1001,"kasyap",1111,true);
+insert into login(name,pass,type) values("raj paul",1234,false);
+select * from login;
+drop table login;
+
+create table tasks(user int,task varchar(20),atask varchar(100),ddate Date,Pcomp int  CHECK (Pcomp between 0 and 100),tid int auto_increment primary Key);
+insert into tasks values (1002,"jdbc","connect db with java","2023-12-02",	0,1);
+insert into tasks (user,task,atask,ddate,Pcomp) values (1002,"jdbc","connect db with java","2023-12-02",100);
+Select * from tasks;
+drop table tasks;
+delete from tasks where Pcomp = 100;
+
+SELECT DATEDIFF('2023-12-15',CURDATE()); 
+update tasks set Pcomp = ? where tid = ? and user = ?;
+
+
+create table Complete(user int,task varchar(20),atask varchar(100),ddate Date,tid int primary Key);
+delete from Complete where tid=1;
+drop table Complete;
+
